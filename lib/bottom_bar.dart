@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/home/index.dart';
 import 'package:nala_clon/mama_nala/index.dart';
 import 'package:nala_clon/send/index.dart';
+import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
 
 class BottomBarSection extends StatefulWidget {
@@ -16,6 +17,11 @@ class _BottomBarSectionState extends State<BottomBarSection> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
+        height: AppLayout.getHeight(70),
+        iconSize: AppLayout.getHeight(22),
+        activeColor: Styles.blueColor,
+
+        //
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
@@ -25,8 +31,17 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             icon: Icon(
               CupertinoIcons.arrow_up_circle_fill,
               color: Styles.blueColor,
+              size: AppLayout.getHeight(40),
             ),
             label: 'Send',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              CupertinoIcons.creditcard_fill,
+              color: Styles.blueColor,
+              size: AppLayout.getHeight(35),
+            ),
+            label: 'Card',
           ),
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.question_circle),
@@ -52,6 +67,13 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             });
             break;
           case 2:
+            returnValue = CupertinoTabView(builder: (context) {
+              return const CupertinoPageScaffold(
+                child: MamaNala(),
+              );
+            });
+            break;
+          case 3:
             returnValue = CupertinoTabView(builder: (context) {
               return const CupertinoPageScaffold(
                 child: MamaNala(),
