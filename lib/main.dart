@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:nala_clon/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +11,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Text("data"),
+    return const CupertinoApp(
+      title: 'Nala iOS clone',
+      debugShowCheckedModeBanner: false,
+      theme: CupertinoThemeData(brightness: Brightness.light),
+      home: BottomBarSection(),
     );
   }
 }
