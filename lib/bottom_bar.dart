@@ -35,14 +35,6 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             ),
             label: 'Send',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              CupertinoIcons.creditcard_fill,
-              color: Styles.blueColor,
-              size: AppLayout.getHeight(35),
-            ),
-            label: 'Card',
-          ),
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.question_circle),
             label: 'Mama NALA',
@@ -54,8 +46,11 @@ class _BottomBarSectionState extends State<BottomBarSection> {
         switch (index) {
           case 0:
             returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: HomePage(),
+              return CupertinoPageScaffold(
+                backgroundColor: Styles.blueColor,
+                child: const SafeArea(
+                  child: HomePage(),
+                ),
               );
             });
             break;
@@ -67,13 +62,6 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             });
             break;
           case 2:
-            returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: MamaNala(),
-              );
-            });
-            break;
-          case 3:
             returnValue = CupertinoTabView(builder: (context) {
               return const CupertinoPageScaffold(
                 child: MamaNala(),
