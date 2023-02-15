@@ -34,8 +34,8 @@ class _WalletCardState extends State<WalletCard> {
               AppLayout.getHeight(100),
             ),
             child: Image(
-              image: const AssetImage("assets/british.png"),
-              width: AppLayout.getWidth(50),
+              image: const AssetImage("assets/bri.png"),
+              width: AppLayout.getWidth(40),
               height: AppLayout.getHeight(40),
             ),
           ),

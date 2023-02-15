@@ -47,7 +47,7 @@ class _BottomBarSectionState extends State<BottomBarSection> {
           case 0:
             returnValue = CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                backgroundColor: Styles.blueColor,
+                backgroundColor: Styles.blueColor.withOpacity(0.8),
                 child: const SafeArea(
                   child: HomePage(),
                 ),

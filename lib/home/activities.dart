@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/home/rates.dart';
 import 'package:nala_clon/sections/index.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 
@@ -15,30 +16,35 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
-        height: size.height * 0.56866,
+      height: size.height * 0.56866,
 
-        // decorations
-        decoration: BoxDecoration(
-          color: CupertinoColors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(
-              AppLayout.getHeight(15),
-            ),
-            topRight: Radius.circular(
-              AppLayout.getHeight(15),
-            ),
+      // decorations
+      decoration: BoxDecoration(
+        color: CupertinoColors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(
+            AppLayout.getHeight(15),
+          ),
+          topRight: Radius.circular(
+            AppLayout.getHeight(15),
           ),
         ),
+      ),
 
-        //
-        child: Column(
-          children: [
-            //
-            Gap(AppLayout.getHeight(15)),
+      //
+      child: Column(
+        children: [
+          //
+          Gap(AppLayout.getHeight(15)),
 
-            //
-            const GreyLine(),
-          ],
-        ));
+          // line
+          const GreyLine(),
+
+          // rates
+          Gap(AppLayout.getHeight(20)),
+          const RatesSection(),
+        ],
+      ),
+    );
   }
 }
