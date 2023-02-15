@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/home/header.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,22 +20,7 @@ class _HomePageState extends State<HomePage> {
         Gap(AppLayout.getHeight(20)),
 
         // header
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppLayout.getWidth(20),
-          ),
-          //
-          child: Row(
-            children: [
-              // text
-              Text(
-                "Good morning, Proc",
-              ),
-
-              // image
-            ],
-          ),
-        )
+        const HeaderSection(),
       ],
     );
   }
