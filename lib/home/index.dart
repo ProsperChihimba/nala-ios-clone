@@ -26,7 +26,17 @@ class _HomePageState extends State<HomePage> {
         Gap(AppLayout.getHeight(15)),
 
         // wallet card
-        const WalletCard(),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding: EdgeInsets.only(left: AppLayout.getWidth(17)),
+            child: Row(
+              children: const [
+                WalletCard(),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
