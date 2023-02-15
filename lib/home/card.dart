@@ -15,9 +15,10 @@ class _WalletCardState extends State<WalletCard> {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
-      width: size.width * 0.38,
+      width: size.width * 0.36,
       height: AppLayout.getHeight(134),
       padding: EdgeInsets.all(AppLayout.getWidth(15)),
+      margin: EdgeInsets.only(right: AppLayout.getWidth(20)),
       decoration: BoxDecoration(
         color: CupertinoColors.white,
         borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
@@ -68,7 +69,7 @@ class _WalletCardState extends State<WalletCard> {
           Text(
             "GBP wallet",
             style: Styles.normalText.copyWith(
-              color: CupertinoColors.black,
+              color: CupertinoColors.black.withOpacity(0.5),
             ),
           ),
 

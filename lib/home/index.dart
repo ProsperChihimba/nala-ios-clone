@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: const [
                 WalletCard(),
+                WalletCard(),
               ],
             ),
           ),
