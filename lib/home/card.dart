@@ -16,7 +16,7 @@ class _WalletCardState extends State<WalletCard> {
     final size = AppLayout.getSize(context);
     return Container(
       width: size.width * 0.36,
-      height: AppLayout.getHeight(134),
+      height: AppLayout.getHeight(140),
       padding: EdgeInsets.all(AppLayout.getWidth(15)),
       margin: EdgeInsets.only(right: AppLayout.getWidth(20)),
       decoration: BoxDecoration(
@@ -40,7 +40,7 @@ class _WalletCardState extends State<WalletCard> {
             ),
           ),
 
-          Gap(AppLayout.getHeight(15)),
+          Gap(AppLayout.getHeight(16)),
 
           // price
           Row(
@@ -65,7 +65,7 @@ class _WalletCardState extends State<WalletCard> {
           ),
 
           // type
-          Gap(AppLayout.getHeight(2)),
+          Gap(AppLayout.getHeight(5)),
           Text(
             "GBP wallet",
             style: Styles.normalText.copyWith(
