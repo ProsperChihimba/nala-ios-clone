@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 
 class HeaderSection extends StatefulWidget {
@@ -29,7 +29,7 @@ class _HeaderSectionState extends State<HeaderSection> {
             decoration: BoxDecoration(
               border: Border.all(
                 width: AppLayout.getWidth(2),
-                color: Colors.white,
+                color: const Color(0xFFffffff),
               ),
               borderRadius: BorderRadius.circular(
                 AppLayout.getHeight(50),

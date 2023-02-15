@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/home/card.dart';
 import 'package:nala_clon/home/header.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 
@@ -21,6 +21,12 @@ class _HomePageState extends State<HomePage> {
 
         // header
         const HeaderSection(),
+
+        //
+        Gap(AppLayout.getHeight(15)),
+
+        // wallet card
+        const WalletCard(),
       ],
     );
   }
