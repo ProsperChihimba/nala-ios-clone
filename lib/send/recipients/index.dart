@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/send/index.dart';
 import 'package:nala_clon/send/recipients/search_bar.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
@@ -28,16 +29,38 @@ class _RecipientsPageState extends State<RecipientsPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  numberSelection(CupertinoIcons.house_alt_fill,
-                      "  Bank account - 1", true),
-                  numberSelection(CupertinoIcons.device_phone_portrait,
-                      "  Mobile money - 0", false),
-                  numberSelection(CupertinoIcons.bag, "  Buy goods - 0", false),
                   numberSelection(
-                      CupertinoIcons.square_list, "  Pay bill - 0", false),
+                    CupertinoIcons.house_alt_fill,
+                    "  Bank account - 1",
+                    true,
+                  ),
+                  numberSelection(
+                    CupertinoIcons.device_phone_portrait,
+                    "  Mobile money - 0",
+                    false,
+                  ),
+                  numberSelection(
+                    CupertinoIcons.bag,
+                    "  Buy goods - 0",
+                    false,
+                  ),
+                  numberSelection(
+                    CupertinoIcons.square_list,
+                    "  Pay bill - 0",
+                    false,
+                  ),
                 ],
               ),
             ),
+
+            //
+            Gap(AppLayout.getHeight(20)),
+            sendOption(
+              CupertinoIcons.house_alt,
+              "Add a bank recipient",
+              "To make bank transfers",
+              false,
+            )
           ],
         ),
       ),
