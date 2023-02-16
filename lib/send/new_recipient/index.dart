@@ -136,7 +136,8 @@ class _NewRecipientState extends State<NewRecipient> {
           Gap(AppLayout.getHeight(10)),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(17)),
-            child: CupertinoButton.filled(
+            child: CupertinoButton(
+              color: Styles.blueColor,
               child: Text("Create and select"),
               onPressed: () {},
             ),

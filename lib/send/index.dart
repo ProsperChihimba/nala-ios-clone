@@ -4,6 +4,7 @@ import 'package:nala_clon/sections/alert_dialog.dart';
 import 'package:nala_clon/sections/index.dart';
 import 'package:nala_clon/sections/new_feature.dart';
 import 'package:nala_clon/send/recipients/index.dart';
+import 'package:nala_clon/send/tag/index.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
 
@@ -51,6 +52,23 @@ class _SendPageState extends State<SendPage> {
                   CupertinoIcons.house_alt_fill,
                   "Send to a bank account",
                   "Make a bank account transfer",
+                  false,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    CupertinoPageRoute(
+                      builder: (BuildContext context) {
+                        return const NalaTag();
+                      },
+                    ),
+                  );
+                },
+                child: sendOption(
+                  CupertinoIcons.person,
+                  "Send to a Nala user",
+                  "Use recepient's Nala Tag or ID",
                   false,
                 ),
               ),
