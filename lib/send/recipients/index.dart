@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
 import 'package:nala_clon/send/index.dart';
+import 'package:nala_clon/send/new_recipient/index.dart';
 import 'package:nala_clon/send/recipients/search_bar.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
@@ -20,7 +21,7 @@ class _RecipientsPageState extends State<RecipientsPage> {
         child: Column(
           children: [
             //
-            SearchBar(),
+            const SearchBar(),
 
             //
             Gap(AppLayout.getHeight(20)),
@@ -29,10 +30,13 @@ class _RecipientsPageState extends State<RecipientsPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  numberSelection(
-                    CupertinoIcons.house_alt_fill,
-                    "  Bank account - 1",
-                    true,
+                  Padding(
+                    padding: EdgeInsets.only(left: AppLayout.getWidth(10)),
+                    child: numberSelection(
+                      CupertinoIcons.house_alt_fill,
+                      "  Bank account - 1",
+                      true,
+                    ),
                   ),
                   numberSelection(
                     CupertinoIcons.device_phone_portrait,
@@ -55,11 +59,25 @@ class _RecipientsPageState extends State<RecipientsPage> {
 
             //
             Gap(AppLayout.getHeight(20)),
-            sendOption(
-              CupertinoIcons.house_alt,
-              "Add a bank recipient",
-              "To make bank transfers",
-              false,
+            Padding(
+              padding: EdgeInsets.only(left: AppLayout.getWidth(10)),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    CupertinoPageRoute(
+                      builder: (BuildContext context) {
+                        return const NewRecipient();
+                      },
+                    ),
+                  );
+                },
+                child: sendOption(
+                  CupertinoIcons.house_alt,
+                  "Add a bank recipient",
+                  "To make bank transfers",
+                  false,
+                ),
+              ),
             )
           ],
         ),
@@ -87,14 +105,14 @@ Widget numberSelection(IconData icon, text, selected) {
       children: [
         // icon
         Icon(
-          CupertinoIcons.house_alt,
+          icon,
           size: AppLayout.getHeight(15),
           color: selected == true ? CupertinoColors.white : Styles.blueColor,
         ),
 
         // text
         Text(
-          "  Bank accounts - 1",
+          text,
           style: Styles.normalText.copyWith(
             fontWeight: FontWeight.w600,
             fontSize: AppLayout.getHeight(13),
