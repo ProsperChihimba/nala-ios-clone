@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/utils/app_layout.dart';
+import 'package:nala_clon/utils/app_styles.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -20,13 +21,18 @@ class SearchBar extends StatelessWidget {
           vertical: AppLayout.getHeight(0),
         ),
         child: Row(
-          children: const [
-            Icon(
+          children: [
+            const Icon(
               CupertinoIcons.search,
               color: Color.fromRGBO(128, 128, 128, 1),
             ),
             Expanded(
               child: CupertinoTextField(
+                placeholder: "Search for a recipient",
+                placeholderStyle: Styles.normalText.copyWith(
+                  // fontWeight:
+                  color: CupertinoColors.systemGrey2,
+                ),
                 decoration: null,
               ),
             ),

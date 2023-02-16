@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/utils/app_layout.dart';
-import 'package:nala_clon/utils/app_styles.dart';
 
 class HeaderSection extends StatefulWidget {
   const HeaderSection({super.key});
