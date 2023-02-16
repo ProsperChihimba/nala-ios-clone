@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/home/index.dart';
+import 'package:nala_clon/home/modal.dart';
 import 'package:nala_clon/mama_nala/index.dart';
 import 'package:nala_clon/send/index.dart';
 import 'package:nala_clon/utils/app_layout.dart';
@@ -28,10 +29,18 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              CupertinoIcons.arrow_up_circle_fill,
-              color: Styles.blueColor,
-              size: AppLayout.getHeight(40),
+            icon: GestureDetector(
+              onTap: () {
+                showCupertinoModalPopup<void>(
+                  context: context,
+                  builder: (BuildContext context) => const SendPage(),
+                );
+              },
+              child: Icon(
+                CupertinoIcons.arrow_up_circle_fill,
+                color: Styles.blueColor,
+                size: AppLayout.getHeight(40),
+              ),
             ),
             label: 'Send',
           ),
@@ -41,8 +50,10 @@ class _BottomBarSectionState extends State<BottomBarSection> {
           ),
         ],
       ),
+
+      //
       tabBuilder: (context, index) {
-        late final CupertinoTabView returnValue;
+        late final Widget returnValue;
         switch (index) {
           case 0:
             returnValue = CupertinoTabView(builder: (context) {
@@ -55,11 +66,15 @@ class _BottomBarSectionState extends State<BottomBarSection> {
             });
             break;
           case 1:
-            returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: SendPage(),
-              );
-            });
+            returnValue = GestureDetector(
+              onTap: () {
+                showCupertinoModalPopup<void>(
+                  context: context,
+                  builder: (BuildContext context) => modalSections(context),
+                );
+              },
+            );
+
             break;
           case 2:
             returnValue = CupertinoTabView(builder: (context) {

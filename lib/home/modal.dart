@@ -6,36 +6,37 @@ import 'package:nala_clon/utils/app_styles.dart';
 
 Widget modalSections(BuildContext context) {
   return CupertinoActionSheet(
-      actions: [
-        CupertinoActionSheetAction(
-          onPressed: () {},
-          child: Column(
-            children: [
-              // header
-              headerCurrency(),
+    actions: [
+      CupertinoActionSheetAction(
+        onPressed: () {},
+        child: Column(
+          children: [
+            // header
+            headerCurrency(),
 
-              // items
-              singleItem("kenya.png", "Kenyan Shillings (KES)", false),
-              Gap(AppLayout.getHeight(25)),
-              singleItem("uganda.png", "Ugandan Shillings (UGX)", false),
-              Gap(AppLayout.getHeight(25)),
-              singleItem("tz.png", "Tanzanian Shillings (TZS)", true),
-              Gap(AppLayout.getHeight(25)),
-              singleItem("ghana.png", "Ghanaian Cedi (GHS)", false),
-              Gap(AppLayout.getHeight(25)),
-              singleItem("rwanda.png", "Rwandan Franc (RWF)", false),
-              Gap(AppLayout.getHeight(8)),
-            ],
-          ),
-        )
-      ],
-      cancelButton: CupertinoActionSheetAction(
-        child: Text('Cancel'),
-        isDefaultAction: true,
-        onPressed: () {
-          Navigator.pop(context, 'Cancel');
-        },
-      ));
+            // items
+            singleItem("kenya.png", "Kenyan Shillings (KES)", false),
+            Gap(AppLayout.getHeight(25)),
+            singleItem("uganda.png", "Ugandan Shillings (UGX)", false),
+            Gap(AppLayout.getHeight(25)),
+            singleItem("tz.png", "Tanzanian Shillings (TZS)", true),
+            Gap(AppLayout.getHeight(25)),
+            singleItem("ghana.png", "Ghanaian Cedi (GHS)", false),
+            Gap(AppLayout.getHeight(25)),
+            singleItem("rwanda.png", "Rwandan Franc (RWF)", false),
+            Gap(AppLayout.getHeight(8)),
+          ],
+        ),
+      )
+    ],
+    cancelButton: CupertinoActionSheetAction(
+      child: Text('Cancel'),
+      isDefaultAction: true,
+      onPressed: () {
+        Navigator.pop(context, 'Cancel');
+      },
+    ),
+  );
 }
 
 Widget headerCurrency() {
