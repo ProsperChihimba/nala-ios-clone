@@ -43,7 +43,9 @@ Widget headerCurrency() {
   return Column(
     children: [
       //
-      const GreyLine(),
+      const GreyLine(
+        color: CupertinoColors.systemGrey4,
+      ),
       Gap(AppLayout.getHeight(20)),
       Padding(
         padding: EdgeInsets.only(left: AppLayout.getWidth(10)),

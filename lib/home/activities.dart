@@ -39,7 +39,9 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
           Gap(AppLayout.getHeight(15)),
 
           // line
-          const GreyLine(),
+          const GreyLine(
+            color: CupertinoColors.systemGrey5,
+          ),
 
           // rates
           Gap(AppLayout.getHeight(20)),

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 
 class GreyLine extends StatelessWidget {
-  const GreyLine({super.key});
+  final Color color;
+  const GreyLine({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class GreyLine extends StatelessWidget {
         width: size.width * 0.25,
         height: AppLayout.getHeight(5),
         decoration: BoxDecoration(
-          color: CupertinoColors.lightBackgroundGray,
+          color: color,
           borderRadius: BorderRadius.circular(
             AppLayout.getHeight(10),
           ),
