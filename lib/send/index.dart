@@ -26,6 +26,33 @@ class _SendPageState extends State<SendPage> {
 
               // items
               newFeature(context),
+
+              // selection
+              Gap(AppLayout.getHeight(20)),
+              sendOption(
+                CupertinoIcons.house_alt_fill,
+                "Send to a bank account",
+                "Make a bank account transfer",
+                false,
+              ),
+              sendOption(
+                CupertinoIcons.device_phone_portrait,
+                "Send to a phone number",
+                "Mobile money directly to a phone number",
+                false,
+              ),
+              sendOption(
+                CupertinoIcons.bag,
+                "Buy goods",
+                "Lipa na Mpesa, Selcom masterpass",
+                true,
+              ),
+              sendOption(
+                CupertinoIcons.square_list,
+                "Pay bill",
+                "DSTV, Electricity, Water etc",
+                true,
+              ),
             ],
           ),
         )
@@ -158,6 +185,99 @@ Widget newFeature(BuildContext context) {
             ),
           ],
         )
+      ],
+    ),
+  );
+}
+
+// send options
+Widget sendOption(IconData icon, header, desc, isNew) {
+  return Padding(
+    padding: EdgeInsets.only(
+      left: AppLayout.getWidth(10),
+      bottom: AppLayout.getHeight(20),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        // first row
+        Row(
+          children: [
+            // icon
+            Container(
+              padding: EdgeInsets.all(AppLayout.getHeight(10)),
+              decoration: BoxDecoration(
+                color: CupertinoColors.systemGrey4.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(AppLayout.getHeight(20)),
+              ),
+              //
+              child: Icon(
+                icon,
+                color: Styles.blueColor,
+                size: AppLayout.getHeight(20),
+              ),
+            ),
+
+            // texts
+            Gap(AppLayout.getWidth(13)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //
+                Text(
+                  header,
+                  style: Styles.normalText.copyWith(
+                    color: Styles.blueColor,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+
+                Text(
+                  desc,
+                  style: Styles.normalText.copyWith(
+                    color: CupertinoColors.black.withOpacity(0.45),
+                    fontWeight: FontWeight.w600,
+                    fontSize: AppLayout.getHeight(13),
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
+
+        // new banner
+        isNew == true
+            ? Container(
+                decoration: BoxDecoration(
+                  color: CupertinoColors.systemGrey4,
+                  borderRadius: BorderRadius.circular(
+                    AppLayout.getWidth(30),
+                  ),
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppLayout.getWidth(8),
+                  vertical: AppLayout.getHeight(3),
+                ),
+                child: Row(
+                  children: [
+                    // star
+                    Icon(
+                      CupertinoIcons.star_fill,
+                      color: Styles.blueColor,
+                      size: AppLayout.getHeight(10),
+                    ),
+                    Text(
+                      " New",
+                      style: Styles.normalText.copyWith(
+                        color: CupertinoColors.black.withOpacity(0.45),
+                        fontWeight: FontWeight.w600,
+                        fontSize: AppLayout.getHeight(10),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            : Container(),
       ],
     ),
   );
