@@ -90,9 +90,57 @@ class _NewRecipientState extends State<NewRecipient> {
           ),
 
           // inputs
-          RecordInput(
+          Gap(AppLayout.getHeight(20)),
+          const RecordInput(
             header: "Company name",
+            hasIcon: false,
           ),
+
+          //
+          Gap(AppLayout.getHeight(25)),
+          countrySelection(context),
+
+          //
+          Gap(AppLayout.getHeight(25)),
+          const RecordInput(
+            header: "Bank name",
+            hasIcon: true,
+          ),
+
+          Gap(AppLayout.getHeight(25)),
+          const RecordInput(
+            header: "Account number",
+            hasIcon: false,
+          ),
+
+          Gap(AppLayout.getHeight(25)),
+          const RecordInput(
+            header: "Confirm account number",
+            hasIcon: false,
+          ),
+
+          //
+          Gap(AppLayout.getHeight(200)),
+
+          //
+          Text(
+            "⚡️ Please check the details of the person you're sending money to. Once sent, we can't refund your money.",
+            textAlign: TextAlign.center,
+            style: Styles.normalText.copyWith(
+              color: CupertinoColors.systemGrey4,
+              fontSize: AppLayout.getHeight(13),
+            ),
+          ),
+
+          // button
+          Gap(AppLayout.getHeight(10)),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(17)),
+            child: CupertinoButton.filled(
+              child: Text("Create and select"),
+              onPressed: () {},
+            ),
+          )
         ],
       ),
     );
