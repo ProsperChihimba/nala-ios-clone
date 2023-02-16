@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/home/modal.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
 
@@ -75,31 +76,39 @@ class _RatesSectionState extends State<RatesSection> {
           ),
 
           // second column
-          Row(
-            children: [
-              // flag
-              Image(
-                image: const AssetImage("assets/tz.png"),
-                width: AppLayout.getWidth(17),
-              ),
-
-              // country
-              Gap(AppLayout.getWidth(6)),
-              Text(
-                "TZS",
-                style: Styles.normalText.copyWith(
-                  fontWeight: FontWeight.w600,
-                  fontSize: AppLayout.getWidth(18),
+          GestureDetector(
+            onTap: () {
+              showCupertinoModalPopup<void>(
+                context: context,
+                builder: (BuildContext context) => modalSections(context),
+              );
+            },
+            child: Row(
+              children: [
+                // flag
+                Image(
+                  image: const AssetImage("assets/tz.png"),
+                  width: AppLayout.getWidth(17),
                 ),
-              ),
 
-              // icon
-              Gap(AppLayout.getWidth(6)),
-              const Icon(
-                CupertinoIcons.chevron_down,
-                color: CupertinoColors.white,
-              )
-            ],
+                // country
+                Gap(AppLayout.getWidth(6)),
+                Text(
+                  "TZS",
+                  style: Styles.normalText.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontSize: AppLayout.getWidth(18),
+                  ),
+                ),
+
+                // icon
+                Gap(AppLayout.getWidth(6)),
+                const Icon(
+                  CupertinoIcons.chevron_down,
+                  color: CupertinoColors.white,
+                )
+              ],
+            ),
           )
         ],
       ),
