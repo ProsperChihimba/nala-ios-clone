@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nala_clon/home/index.dart';
-import 'package:nala_clon/home/modal.dart';
+import 'package:nala_clon/home/wallet/modal.dart';
 import 'package:nala_clon/mama_nala/index.dart';
 import 'package:nala_clon/send/index.dart';
 import 'package:nala_clon/utils/app_layout.dart';
@@ -57,11 +57,8 @@ class _BottomBarSectionState extends State<BottomBarSection> {
         switch (index) {
           case 0:
             returnValue = CupertinoTabView(builder: (context) {
-              return CupertinoPageScaffold(
-                backgroundColor: Styles.blueColor.withOpacity(0.8),
-                child: const SafeArea(
-                  child: HomePage(),
-                ),
+              return const CupertinoPageScaffold(
+                child: HomePage(),
               );
             });
             break;

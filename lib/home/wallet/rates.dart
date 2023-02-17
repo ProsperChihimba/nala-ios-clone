@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
-import 'package:nala_clon/home/modal.dart';
+import 'package:nala_clon/home/wallet/modal.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
 
