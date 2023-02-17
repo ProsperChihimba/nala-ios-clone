@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
 import 'package:nala_clon/utils/app_layout.dart';
+import 'package:nala_clon/utils/app_styles.dart';
 
 class SavingsProfit extends StatelessWidget {
   const SavingsProfit({super.key});
@@ -14,7 +15,8 @@ class SavingsProfit extends StatelessWidget {
       child: Column(
         children: [
           const Profits(
-            description: "Pull out your Funds at any time with no fees",
+            description:
+                "Deposit & pull out your Funds at any time with no fees",
             header: "No Lockup Periods",
             profitIcon: CupertinoIcons.lock,
           ),
@@ -22,8 +24,8 @@ class SavingsProfit extends StatelessWidget {
           // Second row
           Gap(AppLayout.getHeight(30)),
           const Profits(
-            description: "Up to 6% yearly interest, paid daily",
-            header: "Daily Returns",
+            description: "Pay up to 100+ companies, from Netflix to Dstv",
+            header: "Hundreds of companies",
             profitIcon: CupertinoIcons.money_dollar,
           ),
 
@@ -55,9 +57,11 @@ class Profits extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Icon(
           profitIcon,
+          color: Styles.blueColor,
         ),
         Gap(AppLayout.getWidth(16)),
         Column(
@@ -65,15 +69,17 @@ class Profits extends StatelessWidget {
           children: [
             Text(
               header,
-              style: TextStyle(
+              style: Styles.normalText.copyWith(
                 fontWeight: FontWeight.w500,
                 fontSize: AppLayout.getHeight(15),
+                color: CupertinoColors.black.withOpacity(0.8),
               ),
             ),
             Text(
               description,
-              style: TextStyle(
+              style: Styles.normalText.copyWith(
                 fontSize: AppLayout.getHeight(12),
+                color: CupertinoColors.black.withOpacity(0.55),
               ),
             ),
           ],
