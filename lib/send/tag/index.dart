@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
+import 'package:nala_clon/send/tag/confirm.dart';
 import 'package:nala_clon/send/tag/input.dart';
 import 'package:nala_clon/utils/app_layout.dart';
 import 'package:nala_clon/utils/app_styles.dart';
@@ -110,7 +111,15 @@ class _NalaTagState extends State<NalaTag> {
             CupertinoButton(
               color: Styles.blueColor,
               child: Text("Continue"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  CupertinoPageRoute(
+                    builder: (BuildContext context) {
+                      return const ConfirmPage();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
